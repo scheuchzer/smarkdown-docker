@@ -1,0 +1,14 @@
+{
+    "applicationName":"Smarkdown",
+    "pages":{
+        "theme":"bootstrap",
+        "checkForDuplicates":"false"
+    },
+    "slides":{
+        "theme":"sky",
+        "transition":"default"
+    },
+    "locations":[
+        {"url":"file:///smarkdown_data"}
+    ]
+}
