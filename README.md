@@ -19,13 +19,13 @@ This will provide a simple page at http://127.0.0.1:8080/smarkdown/ without any 
 By default smarkdown will read content from the volume directory `/smarkdown_data`. You have two possibilities to add content to that folder
 
 1. Mount a volume
-  ```
-  docker run --rm -it -p 8080:8080 -v /path/to/content:/smarkdown_data scheuchzer/smarkdown
-  ```
-2. Add your content in your own `Dockerfile` 
-  ```
-  ADD somefile.md /smarkdown_data/
-  ```
+	```
+	docker run --rm -it -p 8080:8080 -v /path/to/content:/smarkdown_data scheuchzer/smarkdown
+	```
+2. Add your content in your own `Dockerfile`
+	```
+	ADD somefile.md /smarkdown_data/
+	```
 
 ### Custom configuration
 
@@ -38,6 +38,11 @@ You can provide your own configuration. You'll have to do this if
 - you want to change the templates
 
 See the [Smarkdown documentation](http://smarkdown.java-adventures.com/smarkdown/configuration.html) for more infos about the configuration parameters.
+
+Mount your config file like this
+```
+docker run --rm -it -p 8080:8080 -v /path/to/config:/etc/smarkdown/cfg.json scheuchzer/smarkdown
+```
 
 ## Extending the image
 
