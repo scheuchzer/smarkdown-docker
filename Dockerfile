@@ -19,6 +19,7 @@ ENV SMARKDOWN_APP_DIR $SCRIPT_DIR/tmp
 ENV SMARKDOWN_LIB_DIR $SMARKDOWN_APP_DIR/WEB-INF/lib
 ENV SMARKDOWN_DATA /smarkdown_data
 
+ADD index.md $SMARKDOWN_DATA/index.md
 ADD assemble.sh $SMARKDOWN_ASSEMBLE_FILE
 ADD thirdparty.sh $SMARKDOWN_THIRDPARTY_FILE
 ADD modules.cfg $SMARKDOWN_MODULES_FILE
@@ -31,7 +32,8 @@ RUN chmod +x $SCRIPT_DIR/*.sh \
 	&& $SMARKDOWN_ASSEMBLE_FILE \
 	&& rm -Rf $SMARKDOWN_APP_DIR \
 	&& mkdir -p $SMARKDOWN_DATA \
-	&& echo "# This is smarkdown" > $SMARKDOWN_DATA/index.md
-VOLUME /smarkdown_data
+	&& sed -i "s/alias=\"localhost\">/alias=\"localhost\" default-web-module=\"smarkdown.war\">/" /opt/jboss/wildfly/standalone/configuration/standalone.xml
+
+VOLUME $SMARKDOWN_DATA
 
 USER jboss

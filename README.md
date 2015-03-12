@@ -10,7 +10,7 @@ To run with the default configuration
 docker run --rm -it -p 8080:8080 scheuchzer/smarkdown
 ```
 
-This will provide a simple page at http://127.0.0.1:8080/smarkdown/ without any other content.
+This will provide a simple page at http://127.0.0.1:8080/ without any other content.
 
 ## Documents publishing
 
