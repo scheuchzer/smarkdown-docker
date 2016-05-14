@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/scheuchzer/smarkdown-docker.svg?branch=master)](https://travis-ci.org/scheuchzer/smarkdown-docker)
+
 # Smakrdown Docker Image
 
 This is an example Dockerfile for the [Smarkown application](https://github.com/scheuchzer/smarkdown). This image is based on the latest [Wildfly image](https://github.com/JBoss-Dockerfiles/wildfly).
